@@ -25,8 +25,14 @@ export default class RoundedButton extends React.Component {
   }
 
   render () {
+    const buttonStyles = {
+      'facebook': styles.buttonFacebook,
+      'default': styles.button,
+      undefined: styles.button
+    }
+
     return (
-      <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
+      <TouchableOpacity style={buttonStyles[this.props.styleType]} onPress={this.props.onPress}>
         <Text style={styles.buttonText}>{this.getText()}</Text>
       </TouchableOpacity>
     )

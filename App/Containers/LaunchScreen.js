@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, Image, View } from 'react-native'
-import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
+// import DevscreensButton from '../../ignite/DevScreens/DevscreensButton.js'
+import RoundedButton from '../Components/RoundedButton.js'
 
 import { Images } from '../Themes'
 
@@ -11,20 +12,20 @@ export default class LaunchScreen extends React.Component {
   render () {
     return (
       <View style={styles.mainContainer}>
-        <Image source={Images.background} style={styles.backgroundImage} resizeMode='stretch' />
-        <ScrollView style={styles.container}>
-          <View style={styles.centered}>
-            <Image source={Images.launch} style={styles.logo} />
-          </View>
+        <Image source={Images.background}
+          style={styles.backgroundImage}
+          resizeMode='stretch' />
 
+        <ScrollView style={styles.container}>
           <View style={styles.section} >
-            <Image source={Images.ready} />
             <Text style={styles.sectionText}>
-              {"This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite."}
+              {'Welcome'}
             </Text>
           </View>
+          <RoundedButton text='Sign up with Facebook' styleType='facebook' />
+          <RoundedButton text='Sign up with Email' />
 
-          <DevscreensButton />
+          {/* <DevscreensButton /> */}
         </ScrollView>
       </View>
     )
